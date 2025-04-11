@@ -10,4 +10,4 @@
 <h1>Ciao io sono {nome} {cognome} ed ho {eta} anni</h1>
 <h4>Sono uno studente di informatica presso l'istituto Agnelli a Torino</h4>
 
-<img {src} {width} {height}/>
+<img {src} {width} {height} alt="Immagine"/>
