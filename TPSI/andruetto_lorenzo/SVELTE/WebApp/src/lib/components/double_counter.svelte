@@ -5,17 +5,20 @@
 
 <script>
     import { createEventDispatcher } from "svelte";
+    import { store_dbcounter } from "$lib/js/store";
 
     export let doubleCounter;
     const dispatch = createEventDispatcher();
 
     function dbcounter_int(){
         doubleCounter += 2;
+        $store_dbcounter = doubleCounter;
         emit_event('incr');
     }
 
     function dbcounter_decr() {
         doubleCounter -= 3;
+        $store_dbcounter = doubleCounter;
         emit_event('decr');
     }
 
