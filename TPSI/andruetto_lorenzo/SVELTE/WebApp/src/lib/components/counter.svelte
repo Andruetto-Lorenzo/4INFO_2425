@@ -27,10 +27,9 @@
     }
 </script>
 
-
 <div class="container">
     <div class="pulsante">
-        <button on:click={() => counter--}>
+        <button on:click={counter_decr}>
             <span class="material-symbols-outlined icon">remove</span>
         </button>
     </div>
@@ -40,7 +39,7 @@
     </div>
 
     <div class="pulsante">
-        <button on:click={() => counter++}>
+        <button on:click={counter_int}>
             <span class="material-symbols-outlined icon">add</span>
         </button>
     </div>

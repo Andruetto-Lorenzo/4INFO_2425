@@ -4,12 +4,32 @@
 </svelte:head>
 
 <script>
+    import { createEventDispatcher } from "svelte";
+
     export let doubleCounter;
+    const dispatch = createEventDispatcher();
+
+    function dbcounter_int(){
+        doubleCounter += 2;
+        emit_event('incr');
+    }
+
+    function dbcounter_decr() {
+        doubleCounter -= 3;
+        emit_event('decr');
+    }
+
+    function emit_event(tipo) {
+        dispatch('doubleCounter', {
+            tipo: tipo,
+            valore: doubleCounter
+        })
+    }
 </script>
 
 <div class="container">
     <div class="pulsante">
-        <button on:click={() => doubleCounter -= 3}>
+        <button on:click={dbcounter_decr}>
             <span class="material-symbols-outlined icon">remove</span>
         </button>
     </div>
@@ -19,7 +39,7 @@
     </div>
 
     <div class="pulsante">
-        <button on:click={() => doubleCounter += 2}>
+        <button on:click={dbcounter_int}>
             <span class="material-symbols-outlined icon">add</span>
         </button>
     </div>
